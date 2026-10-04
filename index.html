@@ -1,0 +1,4262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Campus Sports | College Sports Events</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #061827;
+    --bg2: #091f32;
+    --card: #0d2a40;
+    --card2: #102f47;
+    --cyan: #22d3ee;
+    --teal: #14b8a6;
+    --green: #34d399;
+    --white: #f4fbff;
+    --text: #d8e7ef;
+    --muted: #8fa8b7;
+    --border: rgba(255,255,255,0.09);
+    --danger: #fb7185;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(34,211,238,.09), transparent 28%),
+        radial-gradient(circle at 90% 15%, rgba(20,184,166,.08), transparent 28%),
+        var(--bg);
+    color: var(--white);
+    min-height: 100vh;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 72px;
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(6,24,39,.94);
+    backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 39px;
+    height: 39px;
+    border-radius: 11px;
+
+    display: grid;
+    place-items: center;
+
+    background: linear-gradient(135deg,var(--cyan),var(--teal));
+    color: var(--bg);
+
+    font-weight: 900;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+.my-tickets-nav {
+    padding: 9px 15px;
+
+    border: 1px solid rgba(34,211,238,.3);
+    border-radius: 9px;
+
+    background: rgba(34,211,238,.07);
+
+    color: var(--cyan) !important;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    max-width: 1400px;
+    margin: auto;
+
+    min-height: 510px;
+    padding: 90px 6% 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    padding: 8px 13px;
+    margin-bottom: 22px;
+
+    border: 1px solid rgba(34,211,238,.2);
+    border-radius: 30px;
+
+    color: var(--cyan);
+    background: rgba(34,211,238,.07);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(46px,7vw,84px);
+    line-height: .98;
+    letter-spacing: -4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 660px;
+}
+
+.hero-visual {
+    width: 310px;
+    height: 310px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(34,211,238,.18),
+            rgba(20,184,166,.05) 48%,
+            transparent 70%
+        );
+
+    border: 1px solid rgba(34,211,238,.15);
+}
+
+.hero-visual-inner {
+    width: 175px;
+    height: 175px;
+
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(34,211,238,.35);
+
+    color: var(--cyan);
+
+    font-size: 45px;
+    font-weight: 900;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-area {
+    max-width: 1100px;
+    margin: 0 auto 65px;
+    padding: 0 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+
+    padding: 7px;
+
+    background: rgba(13,42,64,.95);
+
+    border: 1px solid rgba(34,211,238,.25);
+    border-radius: 16px;
+
+    box-shadow: 0 20px 70px rgba(0,0,0,.18);
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 17px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: white;
+
+    font-size: 16px;
+}
+
+.search-box input::placeholder {
+    color: #6f8999;
+}
+
+.search-box button {
+    padding: 15px 26px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(135deg,var(--cyan),var(--teal));
+    color: var(--bg);
+
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.section {
+    margin-bottom: 85px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+/* =========================================================
+   SPORTS
+========================================================= */
+
+.sports {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 12px;
+}
+
+.sport-item {
+    padding: 19px 8px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.sport-item:hover,
+.sport-item.active {
+    transform: translateY(-4px);
+
+    border-color: rgba(34,211,238,.42);
+
+    background: rgba(34,211,238,.08);
+}
+
+.sport-code {
+    color: var(--cyan);
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 9px;
+}
+
+.sport-item span {
+    color: var(--text);
+    font-size: 12px;
+}
+
+/* =========================================================
+   MONTH NAV
+========================================================= */
+
+.month-nav {
+    display: flex;
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 10px;
+    margin-bottom: 35px;
+}
+
+.month-button {
+    flex-shrink: 0;
+
+    padding: 10px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 25px;
+
+    background: var(--card);
+    color: var(--muted);
+
+    cursor: pointer;
+}
+
+.month-button:hover,
+.month-button.active {
+    background: var(--cyan);
+    color: var(--bg);
+
+    border-color: var(--cyan);
+}
+
+/* =========================================================
+   MONTH
+========================================================= */
+
+.month-section {
+    margin-bottom: 55px;
+}
+
+.month-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.month-title h3 {
+    font-size: 23px;
+}
+
+.month-line {
+    height: 1px;
+    flex: 1;
+    background: var(--border);
+}
+
+.month-count {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================================================
+   EVENT CARDS
+========================================================= */
+
+.events {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.event-card {
+    position: relative;
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,42,64,.97),
+            rgba(8,29,45,.97)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    transition: .25s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(34,211,238,.38);
+}
+
+.event-date {
+    position: absolute;
+    top: 19px;
+    right: 19px;
+
+    text-align: center;
+
+    min-width: 48px;
+}
+
+.event-date strong {
+    display: block;
+
+    color: var(--cyan);
+
+    font-size: 21px;
+}
+
+.event-date small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.event-tag {
+    display: inline-block;
+
+    padding: 6px 10px;
+    margin-bottom: 17px;
+
+    border-radius: 20px;
+
+    background: rgba(34,211,238,.09);
+    color: var(--cyan);
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.event-card h3 {
+    max-width: 225px;
+
+    font-size: 19px;
+    line-height: 1.35;
+
+    margin-bottom: 15px;
+}
+
+.event-info {
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.event-info span {
+    color: var(--text);
+}
+
+.event-button {
+    width: 100%;
+
+    margin-top: 19px;
+    padding: 11px;
+
+    border: 1px solid rgba(34,211,238,.25);
+    border-radius: 9px;
+
+    background: transparent;
+    color: var(--cyan);
+
+    cursor: pointer;
+
+    font-weight: 700;
+}
+
+.event-button:hover {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty {
+    display: none;
+
+    padding: 50px;
+
+    text-align: center;
+
+    color: var(--muted);
+}
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.info-card {
+    padding: 27px;
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.info-card h3 {
+    margin-bottom: 18px;
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.06);
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list strong {
+    color: var(--white);
+}
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.result-card {
+    padding: 25px;
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.result-top {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.result-top span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.winner {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.winner:last-child {
+    border-bottom: none;
+}
+
+.winner strong {
+    color: var(--cyan);
+}
+
+/* =========================================================
+   MY TICKETS
+========================================================= */
+
+.tickets-section {
+    display: none;
+}
+
+.ticket-summary {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+}
+
+.summary-box {
+    min-width: 170px;
+
+    padding: 18px 20px;
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.summary-box small {
+    display: block;
+
+    color: var(--muted);
+    font-size: 11px;
+
+    margin-bottom: 7px;
+}
+
+.summary-box strong {
+    color: var(--cyan);
+    font-size: 24px;
+}
+
+.ticket-list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.ticket-card {
+    position: relative;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,42,64,.98),
+            rgba(7,28,43,.98)
+        );
+
+    border: 1px solid rgba(34,211,238,.18);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+.ticket-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 4px;
+
+    background: linear-gradient(
+        var(--cyan),
+        var(--teal)
+    );
+}
+
+.ticket-status {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(52,211,153,.09);
+    color: var(--green);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+.ticket-card h3 {
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.ticket-id {
+    color: var(--cyan);
+    font-family: monospace;
+    font-size: 12px;
+
+    margin-bottom: 17px;
+}
+
+.ticket-details {
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.ticket-details strong {
+    color: var(--text);
+}
+
+.ticket-actions {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.ticket-action {
+    flex: 1;
+
+    padding: 10px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.ticket-action.cancel {
+    color: var(--danger);
+    border-color: rgba(251,113,133,.2);
+}
+
+.ticket-action:hover {
+    background: rgba(255,255,255,.06);
+}
+
+.no-tickets {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    border: 1px dashed var(--border);
+    border-radius: 18px;
+
+    color: var(--muted);
+}
+
+.no-tickets h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 3000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(2,10,18,.82);
+
+    backdrop-filter: blur(9px);
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal {
+    width: min(650px, 100%);
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d2a40,
+            #071d2e
+        );
+
+    border: 1px solid rgba(34,211,238,.25);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.55);
+
+    animation: modalIn .2s ease;
+}
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 25px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+    font-size: 23px;
+    line-height: 1.3;
+}
+
+.close-modal {
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    background: transparent;
+    color: var(--muted);
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.close-modal:hover {
+    color: white;
+    border-color: var(--cyan);
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.event-preview {
+    padding: 17px;
+
+    margin-bottom: 24px;
+
+    background: rgba(34,211,238,.05);
+
+    border: 1px solid rgba(34,211,238,.12);
+
+    border-radius: 13px;
+}
+
+.event-preview-row {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 7px 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.event-preview-row strong {
+    color: var(--text);
+    text-align: right;
+}
+
+.form-section-title {
+    font-size: 14px;
+
+    margin-bottom: 13px;
+
+    color: var(--cyan);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+    margin-bottom: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    outline: none;
+
+    background: #071c2c;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: rgba(34,211,238,.55);
+}
+
+.ticket-types {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+.ticket-type {
+    position: relative;
+
+    padding: 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,.025);
+}
+
+.ticket-type.selected {
+    border-color: var(--cyan);
+
+    background: rgba(34,211,238,.07);
+}
+
+.ticket-type input {
+    position: absolute;
+
+    opacity: 0;
+}
+
+.ticket-type-name {
+    display: block;
+
+    color: var(--white);
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.ticket-type-price {
+    color: var(--cyan);
+
+    font-size: 13px;
+}
+
+.quantity-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 0;
+
+    margin-bottom: 22px;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.quantity-btn {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,.04);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.quantity-btn:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.quantity-number {
+    min-width: 25px;
+
+    text-align: center;
+
+    font-weight: 800;
+}
+
+.total-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 17px;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    background: rgba(34,211,238,.07);
+
+    border: 1px solid rgba(34,211,238,.15);
+}
+
+.total-box span {
+    color: var(--muted);
+}
+
+.total-box strong {
+    color: var(--cyan);
+    font-size: 25px;
+}
+
+.book-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        var(--cyan),
+        var(--teal)
+    );
+
+    color: var(--bg);
+
+    cursor: pointer;
+
+    font-weight: 900;
+
+    font-size: 14px;
+}
+
+.book-button:hover {
+    filter: brightness(1.08);
+}
+
+/* =========================================================
+   SUCCESS MODAL
+========================================================= */
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 5px auto 20px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(52,211,153,.1);
+
+    border: 1px solid rgba(52,211,153,.3);
+
+    color: var(--green);
+
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.success-content {
+    text-align: center;
+}
+
+.success-content h2 {
+    margin-bottom: 10px;
+}
+
+.success-content p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.booking-id-box {
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    background: rgba(34,211,238,.06);
+
+    border: 1px solid rgba(34,211,238,.16);
+
+    border-radius: 11px;
+}
+
+.booking-id-box small {
+    display: block;
+
+    color: var(--muted);
+
+    margin-bottom: 6px;
+}
+
+.booking-id-box strong {
+    color: var(--cyan);
+
+    font-family: monospace;
+
+    font-size: 17px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    margin-top: 30px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width:1000px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-visual {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-visual-inner {
+        width: 145px;
+        height: 145px;
+    }
+
+    .sports {
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    .events {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .ticket-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:650px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .sports {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .events {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid,
+    .results {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+    .ticket-types {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        width: 210px;
+        height: 210px;
+    }
+
+    .hero-visual-inner {
+        width: 125px;
+        height: 125px;
+        font-size: 35px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+    <div class="brand">
+
+        <div class="brand-mark">
+            CS
+        </div>
+
+        <div class="brand-name">
+            Campus Sports
+        </div>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#sports">
+            Sports
+        </a>
+
+        <a href="#events">
+            Events
+        </a>
+
+        <a href="#calendar">
+            Calendar
+        </a>
+
+        <a href="#results">
+            Results
+        </a>
+
+        <a
+            href="#myTickets"
+            class="my-tickets-nav"
+            onclick="showMyTickets()"
+        >
+            My Tickets
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">
+            COLLEGE SPORTS EVENT PLATFORM
+        </span>
+
+        <h1>
+            Discover.<br>
+            Compete.<br>
+            <span>Achieve.</span>
+        </h1>
+
+        <p>
+            Explore college sports events, tournaments,
+            competitions, venues and participating institutions
+            across the academic season.
+        </p>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+        <div class="hero-visual-inner">
+            CS
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SEARCH
+========================================================= -->
+
+<section class="search-area">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search sport, event, college, venue, city, month..."
+        >
+
+        <button onclick="searchEvents()">
+            Search
+        </button>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- =========================================================
+     SPORTS
+========================================================= -->
+
+<section class="section" id="sports">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Explore Sports
+            </h2>
+
+            <p>
+                Select a sport to see its events from October 2026
+                to February 2027.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="sports"
+        id="sportsList"
+    ></div>
+
+</section>
+
+
+<!-- =========================================================
+     EVENTS
+========================================================= -->
+
+<section class="section" id="events">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2 id="eventHeading">
+                Upcoming Events
+            </h2>
+
+            <p id="eventSubheading">
+                Explore events across the academic season.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="month-nav"
+        id="monthNav"
+    ></div>
+
+
+    <div
+        id="eventsContainer"
+    ></div>
+
+
+    <div
+        class="empty"
+        id="emptyMessage"
+    >
+        No matching events found.
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MY TICKETS
+========================================================= -->
+
+<section
+    class="section tickets-section"
+    id="myTickets"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                My Tickets
+            </h2>
+
+            <p>
+                Your saved event bookings.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="ticket-summary"
+        id="ticketSummary"
+    ></div>
+
+
+    <div
+        class="ticket-list"
+        id="ticketList"
+    ></div>
+
+</section>
+
+
+<!-- =========================================================
+     CALENDAR
+========================================================= -->
+
+<section
+    class="section"
+    id="calendar"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Event Calendar
+            </h2>
+
+            <p>
+                Monthly overview of sports competitions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="calendarContainer"
+    ></div>
+
+</section>
+
+
+<!-- =========================================================
+     INFO
+========================================================= -->
+
+<section class="section">
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <h3>
+                Participating Colleges
+            </h3>
+
+            <ul class="info-list">
+
+                <li>
+                    <span>
+                        Anna University
+                    </span>
+
+                    <strong>
+                        24
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        SRM Institute
+                    </span>
+
+                    <strong>
+                        21
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        VIT Chennai
+                    </span>
+
+                    <strong>
+                        20
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        Loyola College
+                    </span>
+
+                    <strong>
+                        18
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        Madras University
+                    </span>
+
+                    <strong>
+                        17
+                    </strong>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Popular Venues
+            </h3>
+
+            <ul class="info-list">
+
+                <li>
+                    <span>
+                        University Ground
+                    </span>
+
+                    <strong>
+                        28
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        Main Stadium
+                    </span>
+
+                    <strong>
+                        25
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        Indoor Stadium
+                    </span>
+
+                    <strong>
+                        23
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        Aquatic Centre
+                    </span>
+
+                    <strong>
+                        18
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        Sports Complex
+                    </span>
+
+                    <strong>
+                        20
+                    </strong>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Sports Overview
+            </h3>
+
+            <ul class="info-list">
+
+                <li>
+                    <span>
+                        Total Sports
+                    </span>
+
+                    <strong id="sportTotal">
+                        14
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        Total Events
+                    </span>
+
+                    <strong id="eventTotal">
+                        280
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        Months Covered
+                    </span>
+
+                    <strong>
+                        5
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        Events / Sport / Month
+                    </span>
+
+                    <strong>
+                        4
+                    </strong>
+                </li>
+
+                <li>
+                    <span>
+                        Season
+                    </span>
+
+                    <strong>
+                        2026–27
+                    </strong>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESULTS
+========================================================= -->
+
+<section
+    class="section"
+    id="results"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Recent Results
+            </h2>
+
+            <p>
+                Sample results from completed college competitions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="results">
+
+
+        <div class="result-card">
+
+            <div class="result-top">
+
+                <strong>
+                    Cricket
+                </strong>
+
+                <span>
+                    September 2026
+                </span>
+
+            </div>
+
+            <div class="winner">
+
+                <span>
+                    1st — Anna University
+                </span>
+
+                <strong>
+                    WINNER
+                </strong>
+
+            </div>
+
+            <div class="winner">
+
+                <span>
+                    2nd — VIT Chennai
+                </span>
+
+            </div>
+
+            <div class="winner">
+
+                <span>
+                    3rd — SRM Institute
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <div class="result-top">
+
+                <strong>
+                    Badminton
+                </strong>
+
+                <span>
+                    September 2026
+                </span>
+
+            </div>
+
+            <div class="winner">
+
+                <span>
+                    1st — SRM Institute
+                </span>
+
+                <strong>
+                    WINNER
+                </strong>
+
+            </div>
+
+            <div class="winner">
+
+                <span>
+                    2nd — Loyola College
+                </span>
+
+            </div>
+
+            <div class="winner">
+
+                <span>
+                    3rd — VIT Chennai
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     BOOKING MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="bookingModal"
+>
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <h2 id="bookingTitle">
+                Book Ticket
+            </h2>
+
+            <button
+                class="close-modal"
+                onclick="closeBookingModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div
+                class="event-preview"
+                id="eventPreview"
+            ></div>
+
+
+            <form
+                id="bookingForm"
+                onsubmit="confirmBooking(event)"
+            >
+
+                <h3 class="form-section-title">
+                    Ticket Type
+                </h3>
+
+
+                <div class="ticket-types">
+
+                    <label
+                        class="ticket-type selected"
+                        id="studentTicket"
+                    >
+
+                        <input
+                            type="radio"
+                            name="ticketType"
+                            value="Student"
+                            data-price="50"
+                            checked
+                            onchange="updateTicketType()"
+                        >
+
+                        <span class="ticket-type-name">
+                            Student Ticket
+                        </span>
+
+                        <span class="ticket-type-price">
+                            ₹50 per ticket
+                        </span>
+
+                    </label>
+
+
+                    <label
+                        class="ticket-type"
+                        id="generalTicket"
+                    >
+
+                        <input
+                            type="radio"
+                            name="ticketType"
+                            value="General"
+                            data-price="100"
+                            onchange="updateTicketType()"
+                        >
+
+                        <span class="ticket-type-name">
+                            General Ticket
+                        </span>
+
+                        <span class="ticket-type-price">
+                            ₹100 per ticket
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <h3 class="form-section-title">
+                    Your Details
+                </h3>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="customerEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="customerPhone"
+                            placeholder="Enter your phone number"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="quantity-row">
+
+                    <span>
+                        Number of Tickets
+                    </span>
+
+
+                    <div class="quantity-controls">
+
+                        <button
+                            type="button"
+                            class="quantity-btn"
+                            onclick="changeQuantity(-1)"
+                        >
+                            −
+                        </button>
+
+
+                        <span
+                            class="quantity-number"
+                            id="quantityNumber"
+                        >
+                            1
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="quantity-btn"
+                            onclick="changeQuantity(1)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="total-box">
+
+                    <span>
+                        Total Amount
+                    </span>
+
+                    <strong
+                        id="totalAmount"
+                    >
+                        ₹50
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="book-button"
+                >
+                    Confirm Booking
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SUCCESS MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="successModal"
+>
+
+    <div class="modal">
+
+        <div class="modal-body">
+
+            <div class="success-content">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Booking Confirmed
+                </h2>
+
+                <p>
+                    Your sports event ticket has been
+                    successfully saved.
+                </p>
+
+
+                <div class="booking-id-box">
+
+                    <small>
+                        Booking ID
+                    </small>
+
+                    <strong
+                        id="successBookingId"
+                    >
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="book-button"
+                    onclick="closeSuccessAndShowTickets()"
+                >
+                    View My Tickets
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    Campus Sports · College Sports Event Discovery Platform
+
+    <br><br>
+
+    Demo event and ticket data for academic project use.
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   SPORTS
+========================================================= */
+
+const sports = [
+
+    {
+        name: "Cricket",
+        code: "CR"
+    },
+
+    {
+        name: "Football",
+        code: "FT"
+    },
+
+    {
+        name: "Basketball",
+        code: "BK"
+    },
+
+    {
+        name: "Volleyball",
+        code: "VB"
+    },
+
+    {
+        name: "Badminton",
+        code: "BD"
+    },
+
+    {
+        name: "Tennis",
+        code: "TN"
+    },
+
+    {
+        name: "Table Tennis",
+        code: "TT"
+    },
+
+    {
+        name: "Athletics",
+        code: "AT"
+    },
+
+    {
+        name: "Swimming",
+        code: "SW"
+    },
+
+    {
+        name: "Diving",
+        code: "DV"
+    },
+
+    {
+        name: "Chess",
+        code: "CH"
+    },
+
+    {
+        name: "Kabaddi",
+        code: "KB"
+    },
+
+    {
+        name: "Kho-Kho",
+        code: "KK"
+    },
+
+    {
+        name: "Throwball",
+        code: "TB"
+    }
+
+];
+
+
+/* =========================================================
+   MONTHS
+========================================================= */
+
+const months = [
+
+    {
+        name: "October",
+        short: "OCT",
+        year: 2026
+    },
+
+    {
+        name: "November",
+        short: "NOV",
+        year: 2026
+    },
+
+    {
+        name: "December",
+        short: "DEC",
+        year: 2026
+    },
+
+    {
+        name: "January",
+        short: "JAN",
+        year: 2027
+    },
+
+    {
+        name: "February",
+        short: "FEB",
+        year: 2027
+    }
+
+];
+
+
+/* =========================================================
+   COLLEGES
+========================================================= */
+
+const colleges = [
+
+    "Anna University",
+    "SRM Institute",
+    "VIT Chennai",
+    "Loyola College",
+    "Madras University",
+    "Hindustan University",
+    "Sathyabama Institute",
+    "Saveetha University"
+
+];
+
+
+/* =========================================================
+   VENUES
+========================================================= */
+
+const venues = [
+
+    "University Ground",
+    "Main Stadium",
+    "Indoor Stadium",
+    "Sports Complex",
+    "Aquatic Centre",
+    "College Sports Ground",
+    "University Arena",
+    "Campus Recreation Centre"
+
+];
+
+
+/* =========================================================
+   EVENT PATTERNS
+========================================================= */
+
+const eventPatterns = [
+
+    "Inter-College {sport} Championship",
+
+    "University {sport} Cup",
+
+    "Campus {sport} Tournament",
+
+    "South Zone College {sport} Meet"
+
+];
+
+
+/* =========================================================
+   GENERATE 280 EVENTS
+   14 SPORTS × 5 MONTHS × 4 EVENTS
+========================================================= */
+
+const events = [];
+
+let globalEventId = 1;
+
+
+sports.forEach((sport, sportIndex) => {
+
+    months.forEach((month, monthIndex) => {
+
+        for (
+            let eventIndex = 0;
+            eventIndex < 4;
+            eventIndex++
+        ) {
+
+            const pattern =
+                eventPatterns[eventIndex];
+
+
+            const eventName =
+                pattern.replace(
+                    "{sport}",
+                    sport.name
+                );
+
+
+            const college =
+                colleges[
+                    (
+                        sportIndex +
+                        monthIndex +
+                        eventIndex
+                    ) % colleges.length
+                ];
+
+
+            const venue =
+                venues[
+                    (
+                        sportIndex +
+                        eventIndex +
+                        monthIndex
+                    ) % venues.length
+                ];
+
+
+            const day =
+                4 +
+                (
+                    sportIndex * 2 +
+                    monthIndex * 5 +
+                    eventIndex * 6
+                ) % 24;
+
+
+            events.push({
+
+                id: globalEventId++,
+
+                sport: sport.name,
+
+                sportCode: sport.code,
+
+                month: month.name,
+
+                monthShort: month.short,
+
+                year: month.year,
+
+                day: day,
+
+                name: eventName,
+
+                college: college,
+
+                venue: venue,
+
+                city: "Chennai",
+
+                status:
+                    eventIndex === 3
+                        ? "Coming Soon"
+                        : "Registration Open",
+
+                type:
+                    eventIndex % 2 === 0
+                        ? "Inter-College"
+                        : "University Level",
+
+                description:
+                    `College-level ${sport.name.toLowerCase()} competition for the ${month.name} ${month.year} sports season.`
+
+            });
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let selectedSport = "all";
+
+let selectedMonth = "all";
+
+let searchQuery = "";
+
+let selectedEvent = null;
+
+let bookingQuantity = 1;
+
+
+/* =========================================================
+   LOCAL STORAGE
+========================================================= */
+
+const STORAGE_KEY =
+    "campusSportsBookings";
+
+
+function getBookings() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem(
+                STORAGE_KEY
+            )
+        ) || [];
+
+    } catch (error) {
+
+        return [];
+
+    }
+
+}
+
+
+function saveBookings(bookings) {
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(bookings)
+    );
+
+}
+
+
+/* =========================================================
+   SPORTS UI
+========================================================= */
+
+function renderSports() {
+
+    const container =
+        document.getElementById(
+            "sportsList"
+        );
+
+
+    container.innerHTML = "";
+
+
+    const allButton =
+        document.createElement("div");
+
+
+    allButton.className =
+        "sport-item active";
+
+
+    allButton.innerHTML = `
+
+        <div class="sport-code">
+            ALL
+        </div>
+
+        <span>
+            All Sports
+        </span>
+
+    `;
+
+
+    allButton.onclick =
+        () => filterSport(
+            "all",
+            allButton
+        );
+
+
+    container.appendChild(
+        allButton
+    );
+
+
+    sports.forEach(
+        sport => {
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "sport-item";
+
+
+            item.innerHTML = `
+
+                <div class="sport-code">
+                    ${sport.code}
+                </div>
+
+                <span>
+                    ${sport.name}
+                </span>
+
+            `;
+
+
+            item.onclick =
+                () => filterSport(
+                    sport.name,
+                    item
+                );
+
+
+            container.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MONTH BUTTONS
+========================================================= */
+
+function renderMonthButtons() {
+
+    const container =
+        document.getElementById(
+            "monthNav"
+        );
+
+
+    container.innerHTML = "";
+
+
+    const all =
+        document.createElement(
+            "button"
+        );
+
+
+    all.className =
+        "month-button active";
+
+
+    all.textContent =
+        "All Months";
+
+
+    all.onclick =
+        () => filterMonth(
+            "all",
+            all
+        );
+
+
+    container.appendChild(
+        all
+    );
+
+
+    months.forEach(
+        month => {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "month-button";
+
+
+            button.textContent =
+                `${month.short} ${month.year}`;
+
+
+            button.onclick =
+                () => filterMonth(
+                    month.name,
+                    button
+                );
+
+
+            container.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SPORT FILTER
+========================================================= */
+
+function filterSport(
+    sport,
+    element
+) {
+
+    selectedSport =
+        sport;
+
+
+    document
+        .querySelectorAll(
+            ".sport-item"
+        )
+        .forEach(
+            item => {
+
+                item.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    element.classList.add(
+        "active"
+    );
+
+
+    renderEvents();
+
+
+    document
+        .getElementById(
+            "events"
+        )
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =========================================================
+   MONTH FILTER
+========================================================= */
+
+function filterMonth(
+    month,
+    element
+) {
+
+    selectedMonth =
+        month;
+
+
+    document
+        .querySelectorAll(
+            ".month-button"
+        )
+        .forEach(
+            button => {
+
+                button.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    element.classList.add(
+        "active"
+    );
+
+
+    renderEvents();
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchEvents() {
+
+    searchQuery =
+        document
+            .getElementById(
+                "searchInput"
+            )
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    renderEvents();
+
+}
+
+
+document
+    .getElementById(
+        "searchInput"
+    )
+    .addEventListener(
+        "input",
+        searchEvents
+    );
+
+
+/* =========================================================
+   EVENT MATCHING
+========================================================= */
+
+function matchesEvent(event) {
+
+    const searchText = `
+
+        ${event.name}
+
+        ${event.sport}
+
+        ${event.college}
+
+        ${event.venue}
+
+        ${event.city}
+
+        ${event.month}
+
+        ${event.year}
+
+        ${event.type}
+
+        ${event.status}
+
+        ${event.description}
+
+    `.toLowerCase();
+
+
+    const matchesSearch =
+        searchText.includes(
+            searchQuery
+        );
+
+
+    const matchesSport =
+        selectedSport === "all" ||
+        event.sport === selectedSport;
+
+
+    const matchesMonth =
+        selectedMonth === "all" ||
+        event.month === selectedMonth;
+
+
+    return (
+        matchesSearch &&
+        matchesSport &&
+        matchesMonth
+    );
+
+}
+
+
+/* =========================================================
+   RENDER EVENTS
+========================================================= */
+
+function renderEvents() {
+
+    const container =
+        document.getElementById(
+            "eventsContainer"
+        );
+
+
+    container.innerHTML = "";
+
+
+    const filteredEvents =
+        events.filter(
+            matchesEvent
+        );
+
+
+    document.getElementById(
+        "emptyMessage"
+    ).style.display =
+        filteredEvents.length === 0
+            ? "block"
+            : "none";
+
+
+    if (
+        filteredEvents.length === 0
+    ) {
+
+        updateHeading(0);
+
+        return;
+
+    }
+
+
+    months.forEach(
+        month => {
+
+            const monthEvents =
+                filteredEvents.filter(
+                    event =>
+                        event.month ===
+                        month.name
+                );
+
+
+            if (
+                monthEvents.length === 0
+            ) {
+
+                return;
+
+            }
+
+
+            const monthSection =
+                document.createElement(
+                    "div"
+                );
+
+
+            monthSection.className =
+                "month-section";
+
+
+            monthSection.innerHTML = `
+
+                <div class="month-title">
+
+                    <h3>
+                        ${month.name}
+                        ${month.year}
+                    </h3>
+
+                    <div class="month-line"></div>
+
+                    <span class="month-count">
+                        ${monthEvents.length}
+                        events
+                    </span>
+
+                </div>
+
+                <div class="events"></div>
+
+            `;
+
+
+            const grid =
+                monthSection.querySelector(
+                    ".events"
+                );
+
+
+            monthEvents.forEach(
+                event => {
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    card.className =
+                        "event-card";
+
+
+                    card.innerHTML = `
+
+                        <div class="event-date">
+
+                            <strong>
+                                ${String(event.day).padStart(2,"0")}
+                            </strong>
+
+                            <small>
+                                ${event.monthShort}
+                            </small>
+
+                        </div>
+
+
+                        <span class="event-tag">
+                            ${event.sport.toUpperCase()}
+                        </span>
+
+
+                        <h3>
+                            ${event.name}
+                        </h3>
+
+
+                        <div class="event-info">
+
+                            College:
+                            <span>
+                                ${event.college}
+                            </span>
+
+                            <br>
+
+                            Venue:
+                            <span>
+                                ${event.venue}
+                            </span>
+
+                            <br>
+
+                            Location:
+                            <span>
+                                ${event.city}
+                            </span>
+
+                            <br>
+
+                            Type:
+                            <span>
+                                ${event.type}
+                            </span>
+
+                            <br>
+
+                            Status:
+                            <span>
+                                ${event.status}
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="event-button"
+                            onclick="openBookingModal(${event.id})"
+                        >
+                            Book Ticket
+                        </button>
+
+                    `;
+
+
+                    grid.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+
+            container.appendChild(
+                monthSection
+            );
+
+        }
+    );
+
+
+    updateHeading(
+        filteredEvents.length
+    );
+
+}
+
+
+/* =========================================================
+   EVENT HEADING
+========================================================= */
+
+function updateHeading(
+    count
+) {
+
+    let title =
+        "Upcoming Events";
+
+
+    if (
+        selectedSport !== "all"
+    ) {
+
+        title =
+            selectedSport +
+            " Events";
+
+    }
+
+
+    document.getElementById(
+        "eventHeading"
+    ).textContent =
+        title;
+
+
+    document.getElementById(
+        "eventSubheading"
+    ).textContent =
+        `${count} events found from October 2026 to February 2027.`;
+
+}
+
+
+/* =========================================================
+   OPEN BOOKING
+========================================================= */
+
+function openBookingModal(
+    eventId
+) {
+
+    selectedEvent =
+        events.find(
+            event =>
+                event.id === eventId
+        );
+
+
+    if (!selectedEvent) {
+
+        return;
+
+    }
+
+
+    bookingQuantity = 1;
+
+
+    document.getElementById(
+        "bookingModal"
+    ).classList.add(
+        "show"
+    );
+
+
+    document.getElementById(
+        "bookingTitle"
+    ).textContent =
+        "Book Ticket";
+
+
+    document.getElementById(
+        "eventPreview"
+    ).innerHTML = `
+
+        <div class="event-preview-row">
+
+            <span>
+                Event
+            </span>
+
+            <strong>
+                ${selectedEvent.name}
+            </strong>
+
+        </div>
+
+
+        <div class="event-preview-row">
+
+            <span>
+                Sport
+            </span>
+
+            <strong>
+                ${selectedEvent.sport}
+            </strong>
+
+        </div>
+
+
+        <div class="event-preview-row">
+
+            <span>
+                Date
+            </span>
+
+            <strong>
+                ${selectedEvent.day}
+                ${selectedEvent.month}
+                ${selectedEvent.year}
+            </strong>
+
+        </div>
+
+
+        <div class="event-preview-row">
+
+            <span>
+                College
+            </span>
+
+            <strong>
+                ${selectedEvent.college}
+            </strong>
+
+        </div>
+
+
+        <div class="event-preview-row">
+
+            <span>
+                Venue
+            </span>
+
+            <strong>
+                ${selectedEvent.venue}
+            </strong>
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "bookingForm"
+    ).reset();
+
+
+    document.querySelector(
+        'input[value="Student"]'
+    ).checked = true;
+
+
+    document.getElementById(
+        "quantityNumber"
+    ).textContent = "1";
+
+
+    updateTicketType();
+
+}
+
+
+/* =========================================================
+   CLOSE BOOKING
+========================================================= */
+
+function closeBookingModal() {
+
+    document.getElementById(
+        "bookingModal"
+    ).classList.remove(
+        "show"
+    );
+
+    selectedEvent = null;
+
+}
+
+
+/* =========================================================
+   TICKET TYPE
+========================================================= */
+
+function updateTicketType() {
+
+    document
+        .querySelectorAll(
+            ".ticket-type"
+        )
+        .forEach(
+            box => {
+
+                box.classList.remove(
+                    "selected"
+                );
+
+            }
+        );
+
+
+    const selected =
+        document.querySelector(
+            'input[name="ticketType"]:checked'
+        );
+
+
+    if (selected) {
+
+        selected
+            .closest(
+                ".ticket-type"
+            )
+            .classList.add(
+                "selected"
+            );
+
+    }
+
+
+    updateTotal();
+
+}
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+function changeQuantity(
+    amount
+) {
+
+    bookingQuantity +=
+        amount;
+
+
+    if (
+        bookingQuantity < 1
+    ) {
+
+        bookingQuantity = 1;
+
+    }
+
+
+    if (
+        bookingQuantity > 10
+    ) {
+
+        bookingQuantity = 10;
+
+    }
+
+
+    document.getElementById(
+        "quantityNumber"
+    ).textContent =
+        bookingQuantity;
+
+
+    updateTotal();
+
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+function updateTotal() {
+
+    const selected =
+        document.querySelector(
+            'input[name="ticketType"]:checked'
+        );
+
+
+    if (!selected) {
+
+        return;
+
+    }
+
+
+    const price =
+        Number(
+            selected.dataset.price
+        );
+
+
+    const total =
+        price *
+        bookingQuantity;
+
+
+    document.getElementById(
+        "totalAmount"
+    ).textContent =
+        `₹${total}`;
+
+}
+
+
+/* =========================================================
+   CONFIRM BOOKING
+========================================================= */
+
+function confirmBooking(
+    event
+) {
+
+    event.preventDefault();
+
+
+    if (!selectedEvent) {
+
+        return;
+
+    }
+
+
+    const name =
+        document.getElementById(
+            "customerName"
+        ).value.trim();
+
+
+    const email =
+        document.getElementById(
+            "customerEmail"
+        ).value.trim();
+
+
+    const phone =
+        document.getElementById(
+            "customerPhone"
+        ).value.trim();
+
+
+    const selectedTicket =
+        document.querySelector(
+            'input[name="ticketType"]:checked'
+        );
+
+
+    if (!selectedTicket) {
+
+        alert(
+            "Please select a ticket type."
+        );
+
+        return;
+
+    }
+
+
+    const ticketType =
+        selectedTicket.value;
+
+
+    const price =
+        Number(
+            selectedTicket.dataset.price
+        );
+
+
+    const total =
+        price *
+        bookingQuantity;
+
+
+    const bookingId =
+        generateBookingId();
+
+
+    const booking = {
+
+        id: bookingId,
+
+        eventId:
+            selectedEvent.id,
+
+        eventName:
+            selectedEvent.name,
+
+        sport:
+            selectedEvent.sport,
+
+        date:
+            `${selectedEvent.day} ${selectedEvent.month} ${selectedEvent.year}`,
+
+        day:
+            selectedEvent.day,
+
+        month:
+            selectedEvent.month,
+
+        year:
+            selectedEvent.year,
+
+        college:
+            selectedEvent.college,
+
+        venue:
+            selectedEvent.venue,
+
+        city:
+            selectedEvent.city,
+
+        customerName:
+            name,
+
+        customerEmail:
+            email,
+
+        customerPhone:
+            phone,
+
+        ticketType:
+            ticketType,
+
+        quantity:
+            bookingQuantity,
+
+        pricePerTicket:
+            price,
+
+        total:
+            total,
+
+        bookedAt:
+            new Date().toISOString(),
+
+        status:
+            "Confirmed"
+
+    };
+
+
+    const bookings =
+        getBookings();
+
+
+    bookings.push(
+        booking
+    );
+
+
+    saveBookings(
+        bookings
+    );
+
+
+    document.getElementById(
+        "bookingModal"
+    ).classList.remove(
+        "show"
+    );
+
+
+    document.getElementById(
+        "successBookingId"
+    ).textContent =
+        bookingId;
+
+
+    document.getElementById(
+        "successModal"
+    ).classList.add(
+        "show"
+    );
+
+
+    updateTicketSummary();
+
+}
+
+
+/* =========================================================
+   GENERATE BOOKING ID
+========================================================= */
+
+function generateBookingId() {
+
+    const random =
+        Math.floor(
+            100000 +
+            Math.random() * 900000
+        );
+
+
+    return `CS2027-${random}`;
+
+}
+
+
+/* =========================================================
+   CLOSE SUCCESS + MY TICKETS
+========================================================= */
+
+function closeSuccessAndShowTickets() {
+
+    document.getElementById(
+        "successModal"
+    ).classList.remove(
+        "show"
+    );
+
+
+    showMyTickets();
+
+}
+
+
+/* =========================================================
+   SHOW MY TICKETS
+========================================================= */
+
+function showMyTickets() {
+
+    const section =
+        document.getElementById(
+            "myTickets"
+        );
+
+
+    section.style.display =
+        "block";
+
+
+    renderMyTickets();
+
+
+    section.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================================================
+   RENDER MY TICKETS
+========================================================= */
+
+function renderMyTickets() {
+
+    const bookings =
+        getBookings();
+
+
+    const list =
+        document.getElementById(
+            "ticketList"
+        );
+
+
+    list.innerHTML = "";
+
+
+    if (
+        bookings.length === 0
+    ) {
+
+        list.innerHTML = `
+
+            <div class="no-tickets">
+
+                <h3>
+                    No Tickets Yet
+                </h3>
+
+                <p>
+                    Book a sports event and
+                    your ticket will appear here.
+                </p>
+
+            </div>
+
+        `;
+
+
+        updateTicketSummary();
+
+        return;
+
+    }
+
+
+    bookings
+        .slice()
+        .reverse()
+        .forEach(
+            booking => {
+
+                const card =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                card.className =
+                    "ticket-card";
+
+
+                card.innerHTML = `
+
+                    <span class="ticket-status">
+                        ${booking.status}
+                    </span>
+
+
+                    <h3>
+                        ${booking.eventName}
+                    </h3>
+
+
+                    <div class="ticket-id">
+                        ${booking.id}
+                    </div>
+
+
+                    <div class="ticket-details">
+
+                        <strong>
+                            Sport:
+                        </strong>
+                        ${booking.sport}
+
+                        <br>
+
+                        <strong>
+                            Date:
+                        </strong>
+                        ${booking.date}
+
+                        <br>
+
+                        <strong>
+                            Venue:
+                        </strong>
+                        ${booking.venue}
+
+                        <br>
+
+                        <strong>
+                            College:
+                        </strong>
+                        ${booking.college}
+
+                        <br>
+
+                        <strong>
+                            Ticket:
+                        </strong>
+                        ${booking.ticketType}
+
+                        <br>
+
+                        <strong>
+                            Quantity:
+                        </strong>
+                        ${booking.quantity}
+
+                        <br>
+
+                        <strong>
+                            Total:
+                        </strong>
+                        ₹${booking.total}
+
+                        <br>
+
+                        <strong>
+                            Name:
+                        </strong>
+                        ${booking.customerName}
+
+                    </div>
+
+
+                    <div class="ticket-actions">
+
+                        <button
+                            class="ticket-action"
+                            onclick="showBookingDetails('${booking.id}')"
+                        >
+                            View Details
+                        </button>
+
+
+                        <button
+                            class="ticket-action cancel"
+                            onclick="cancelBooking('${booking.id}')"
+                        >
+                            Cancel
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                list.appendChild(
+                    card
+                );
+
+            }
+        );
+
+
+    updateTicketSummary();
+
+}
+
+
+/* =========================================================
+   TICKET SUMMARY
+========================================================= */
+
+function updateTicketSummary() {
+
+    const bookings =
+        getBookings();
+
+
+    const totalTickets =
+        bookings.reduce(
+            (sum, booking) =>
+                sum + booking.quantity,
+            0
+        );
+
+
+    const totalAmount =
+        bookings.reduce(
+            (sum, booking) =>
+                sum + booking.total,
+            0
+        );
+
+
+    document.getElementById(
+        "ticketSummary"
+    ).innerHTML = `
+
+        <div class="summary-box">
+
+            <small>
+                BOOKINGS
+            </small>
+
+            <strong>
+                ${bookings.length}
+            </strong>
+
+        </div>
+
+
+        <div class="summary-box">
+
+            <small>
+                TOTAL TICKETS
+            </small>
+
+            <strong>
+                ${totalTickets}
+            </strong>
+
+        </div>
+
+
+        <div class="summary-box">
+
+            <small>
+                TOTAL BOOKING VALUE
+            </small>
+
+            <strong>
+                ₹${totalAmount}
+            </strong>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   VIEW BOOKING DETAILS
+========================================================= */
+
+function showBookingDetails(
+    bookingId
+) {
+
+    const booking =
+        getBookings().find(
+            item =>
+                item.id === bookingId
+        );
+
+
+    if (!booking) {
+
+        return;
+
+    }
+
+
+    alert(
+
+        `BOOKING CONFIRMED\n\n` +
+
+        `Booking ID: ${booking.id}\n\n` +
+
+        `Event: ${booking.eventName}\n` +
+
+        `Sport: ${booking.sport}\n` +
+
+        `Date: ${booking.date}\n` +
+
+        `Venue: ${booking.venue}\n` +
+
+        `College: ${booking.college}\n\n` +
+
+        `Name: ${booking.customerName}\n` +
+
+        `Ticket Type: ${booking.ticketType}\n` +
+
+        `Tickets: ${booking.quantity}\n` +
+
+        `Total: ₹${booking.total}`
+
+    );
+
+}
+
+
+/* =========================================================
+   CANCEL BOOKING
+========================================================= */
+
+function cancelBooking(
+    bookingId
+) {
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to cancel this booking?"
+        );
+
+
+    if (!confirmed) {
+
+        return;
+
+    }
+
+
+    let bookings =
+        getBookings();
+
+
+    bookings =
+        bookings.filter(
+            booking =>
+                booking.id !== bookingId
+        );
+
+
+    saveBookings(
+        bookings
+    );
+
+
+    renderMyTickets();
+
+}
+
+
+/* =========================================================
+   CALENDAR
+========================================================= */
+
+function renderCalendar() {
+
+    const container =
+        document.getElementById(
+            "calendarContainer"
+        );
+
+
+    container.innerHTML = "";
+
+
+    months.forEach(
+        month => {
+
+            const monthEvents =
+                events.filter(
+                    event =>
+                        event.month ===
+                        month.name
+                );
+
+
+            const wrapper =
+                document.createElement(
+                    "div"
+                );
+
+
+            wrapper.style.marginBottom =
+                "45px";
+
+
+            wrapper.innerHTML = `
+
+                <div class="month-title">
+
+                    <h3>
+                        ${month.name}
+                        ${month.year}
+                    </h3>
+
+                    <div class="month-line"></div>
+
+                    <span class="month-count">
+                        ${monthEvents.length}
+                        events
+                    </span>
+
+                </div>
+
+
+                <div class="events"></div>
+
+            `;
+
+
+            const grid =
+                wrapper.querySelector(
+                    ".events"
+                );
+
+
+            /*
+                Show first 6 events of each month
+                in calendar preview.
+            */
+
+            monthEvents
+                .slice(0, 6)
+                .forEach(
+                    item => {
+
+                        const card =
+                            document.createElement(
+                                "article"
+                            );
+
+
+                        card.className =
+                            "event-card";
+
+
+                        card.innerHTML = `
+
+                            <span class="event-tag">
+                                ${item.sport.toUpperCase()}
+                            </span>
+
+                            <h3>
+                                ${item.name}
+                            </h3>
+
+                            <div class="event-info">
+
+                                ${item.day}
+                                ${item.monthShort}
+                                ${item.year}
+
+                                <br>
+
+                                ${item.college}
+
+                                <br>
+
+                                ${item.venue}
+
+                            </div>
+
+
+                            <button
+                                class="event-button"
+                                onclick="openBookingModal(${item.id})"
+                            >
+                                Book Ticket
+                            </button>
+
+                        `;
+
+
+                        grid.appendChild(
+                            card
+                        );
+
+                    }
+                );
+
+
+            container.appendChild(
+                wrapper
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MODAL BACKGROUND CLICK
+========================================================= */
+
+document
+    .getElementById(
+        "bookingModal"
+    )
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                closeBookingModal();
+
+            }
+
+        }
+    );
+
+
+document
+    .getElementById(
+        "successModal"
+    )
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                this.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeBookingModal();
+
+
+            document.getElementById(
+                "successModal"
+            ).classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+renderSports();
+
+renderMonthButtons();
+
+renderEvents();
+
+renderCalendar();
+
+updateTicketSummary();
+
+
+document.getElementById(
+    "eventTotal"
+).textContent =
+    events.length;
+
+
+document.getElementById(
+    "sportTotal"
+).textContent =
+    sports.length;
+
+</script>
+
+</body>
+</html>
